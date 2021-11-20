@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import fonts from '../assets/fonts';
+import i18n from '../assets/translations';
 
 export default () => {
 	const [isLoadingComplete, setLoadingComplete] = useState(false);
@@ -9,6 +10,8 @@ export default () => {
 	useEffect(() => {
 		const loadResourcesAndDataAsync = async () => {
 			try {
+				// Load translations
+				await i18n.init();
 				// Load fonts
 				await fonts.init();
 			} finally {
