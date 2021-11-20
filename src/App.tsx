@@ -1,3 +1,4 @@
+import { StatusBar } from 'expo-status-bar';
 import React, { FC } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ThemeProvider } from 'styled-components';
@@ -15,6 +16,7 @@ export const App: FC = () => {
 	return (
 		<ThemeProvider theme={isDarkMode ? darkTheme : defaultTheme}>
 			<SafeAreaProvider />
+			<StatusBar style="auto" />
 		</ThemeProvider>
 	);
 };
