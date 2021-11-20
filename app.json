@@ -17,7 +17,11 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "CFBundleAllowMixedLocalizations": true,
+        "RCTAsyncStorageExcludeFromBackup": false
+      }
     },
     "android": {
       "adaptiveIcon": {
