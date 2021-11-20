@@ -13,6 +13,7 @@
     "expo": "~43.0.3",
     "expo-font": "~10.0.3",
     "expo-localization": "~11.0.0",
+    "expo-splash-screen": "~0.13.5",
     "expo-status-bar": "~1.1.0",
     "i18n-js": "^3.8.0",
     "react": "17.0.2",

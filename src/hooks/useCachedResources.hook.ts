@@ -1,3 +1,4 @@
+import * as SplashScreen from 'expo-splash-screen';
 import { useEffect, useState } from 'react';
 
 import fonts from '../assets/fonts';
@@ -10,12 +11,16 @@ export default () => {
 	useEffect(() => {
 		const loadResourcesAndDataAsync = async () => {
 			try {
+				// Do not hide splash screen
+				SplashScreen.preventAutoHideAsync();
 				// Load translations
 				await i18n.init();
 				// Load fonts
 				await fonts.init();
 			} finally {
 				setLoadingComplete(true);
+				// Hide splash screen
+				SplashScreen.hideAsync();
 			}
 		};
 
