@@ -1,0 +1,40 @@
+# Don't look for another .editorconfig file in parent directories
+root = true
+
+# Defaults to tab-indented (use smart-tabs)
+[*]
+charset = utf-8
+indent_style = tab
+indent_size = 2
+tab_width = 2
+max_line_length = 100
+end_of_line = LF
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# 2 space indentation for package.json and bower.json
+[*.json]
+indent_style = space
+indent_size = 2
+
+# 4 space indentation for composer.json
+[composer.json]
+indent_style = space
+indent_size = 4
+
+# 2 space indentation for all yml files.
+[*.yml]
+indent_style = space
+indent_size = 2
+
+# Don't trim trailing whitespace on MarkDown.
+# (Remember, trailing spaces in markdown is used to differentiate line breaks and paragraphs)
+[*.md]
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = false
+max_line_length = off
+
+# Windows files
+[*.bat]
+end_of_line = crlf
