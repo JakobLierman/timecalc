@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ThemeProvider } from 'styled-components';
 
 import { useCachedResources, useColorScheme } from './hooks';
@@ -13,6 +14,7 @@ export const App: FC = () => {
 
 	return (
 		<ThemeProvider theme={isDarkMode ? darkTheme : defaultTheme}>
+			<SafeAreaProvider />
 		</ThemeProvider>
 	);
 };
