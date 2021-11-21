@@ -43,6 +43,7 @@ const defaultTheme: DefaultTheme = {
 				selected: '#FFFFFF',
 			},
 			borderRadius: 10,
+			height: 36,
 		},
 		numberInput: {
 			backgroundColor: '#FFFFFF33',

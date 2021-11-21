@@ -3,7 +3,6 @@ import styled from 'styled-components/native';
 import { SelectionButton as SelectionButtonComponent } from '../../atoms';
 
 const Container = styled.View`
-	flex: 1;
 	flex-direction: row;
 `;
 

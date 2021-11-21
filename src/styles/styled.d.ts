@@ -34,15 +34,16 @@ declare module 'styled-components' {
 			button: {
 				fontSize: number;
 			};
-			numberInput: {
-				backgroundColor: string;
-				borderRadius: number;
-			};
 			selectionButton: {
 				backgroundColor: {
 					unselected: string;
 					selected: string;
 				};
+				borderRadius: number;
+				height: number;
+			};
+			numberInput: {
+				backgroundColor: string;
 				borderRadius: number;
 			};
 		};

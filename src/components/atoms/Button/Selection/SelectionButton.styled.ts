@@ -7,9 +7,11 @@ const Pressable = styled.Pressable<{ selected: boolean }>`
 	align-items: center;
 	justify-content: center;
 
+	height: ${({ theme }) => theme.components.selectionButton.height}px;
+
 	background-color: ${({ theme, selected }) =>
 		theme.components.selectionButton.backgroundColor[selected ? 'selected' : 'unselected']};
-	border-radius: ${({ theme }) => theme.components.selectionButton.borderRadius};
+	border-radius: ${({ theme }) => theme.components.selectionButton.borderRadius}px;
 `;
 
 const ValueText = styled(Text)<{ selected: boolean }>`
