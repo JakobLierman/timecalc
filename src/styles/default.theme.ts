@@ -1,4 +1,5 @@
 import { DefaultTheme } from 'styled-components';
+
 import { EFont } from '../assets/fonts';
 
 const defaultTheme: DefaultTheme = {
@@ -17,9 +18,9 @@ const defaultTheme: DefaultTheme = {
 		},
 		sizes: {
 			default: 14,
-			subtitle: 20,
-			title: 34,
 			label: 16,
+			title: 34,
+			subtitle: 20,
 		},
 	},
 	margins: {

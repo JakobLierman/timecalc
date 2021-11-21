@@ -15,9 +15,9 @@ declare module 'styled-components' {
 			alternative: Font;
 			sizes: {
 				default: number;
+				label: number;
 				title: number;
 				subtitle: number;
-				label: number;
 			};
 		};
 		margins: {

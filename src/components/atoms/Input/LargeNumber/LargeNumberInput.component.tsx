@@ -1,5 +1,5 @@
 import React, { FC, useCallback, useRef, useState } from 'react';
-import { LayoutChangeEvent, TextInput, ViewStyle } from 'react-native';
+import { LayoutChangeEvent, TextInput } from 'react-native';
 
 import { TComponentProps } from '../../../types';
 
@@ -10,7 +10,7 @@ type TProps = {
 	maximum?: number;
 };
 
-const LargeNumberInput: FC<TComponentProps<TProps, ViewStyle>> = ({
+const LargeNumberInput: FC<TComponentProps<TProps>> = ({
 	defaultValue = 0,
 	maximum = 59,
 	style,
