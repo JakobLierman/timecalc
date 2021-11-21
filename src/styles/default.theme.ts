@@ -34,6 +34,16 @@ const defaultTheme: DefaultTheme = {
 		text: '#FFFFFF',
 	},
 	components: {
+		button: {
+			fontSize: 20,
+		},
+		selectionButton: {
+			backgroundColor: {
+				unselected: '#FFFFFF33',
+				selected: '#FFFFFF',
+			},
+			borderRadius: 10,
+		},
 		numberInput: {
 			backgroundColor: '#FFFFFF33',
 			borderRadius: 20,

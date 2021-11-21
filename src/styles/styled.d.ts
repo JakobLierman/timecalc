@@ -31,8 +31,18 @@ declare module 'styled-components' {
 			text: string;
 		};
 		components: {
+			button: {
+				fontSize: number;
+			};
 			numberInput: {
 				backgroundColor: string;
+				borderRadius: number;
+			};
+			selectionButton: {
+				backgroundColor: {
+					unselected: string;
+					selected: string;
+				};
 				borderRadius: number;
 			};
 		};
