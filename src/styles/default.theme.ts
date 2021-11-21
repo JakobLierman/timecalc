@@ -20,7 +20,7 @@ const defaultTheme: DefaultTheme = {
 			default: 14,
 			label: 16,
 			title: 34,
-			subtitle: 20,
+			subtitle: 24,
 		},
 	},
 	margins: {
