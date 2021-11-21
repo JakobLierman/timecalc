@@ -31,6 +31,10 @@ declare module 'styled-components' {
 			text: string;
 		};
 		components: {
+			numberInput: {
+				backgroundColor: string;
+				borderRadius: number;
+			};
 		};
 	}
 }
