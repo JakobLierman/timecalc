@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-import { Text } from '../../';
+import Text from '../../Text/Text.component';
 
 const Pressable = styled.Pressable<{ selected: boolean }>`
 	flex: 1;
