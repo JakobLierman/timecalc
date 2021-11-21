@@ -4,8 +4,8 @@ import defaultTheme from '../styles/default.theme';
 
 const darkTheme: DefaultTheme = {
 	...defaultTheme,
-	colors: {},
-	components: {},
+	//colors: {}, // TODO
+	//components: {}, // TODO
 };
 
 export default darkTheme;

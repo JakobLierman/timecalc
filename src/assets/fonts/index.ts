@@ -1,7 +1,7 @@
-import * as Font from 'expo-font';
 import { FontAwesome } from '@expo/vector-icons';
+import * as Font from 'expo-font';
 
-enum EFont {
+export enum EFont {
 	NotoSansRegular = 'NotoSans-Regular',
 	NotoSansBold = 'NotoSans-Bold',
 	NotoSansItalic = 'NotoSans-Italic',

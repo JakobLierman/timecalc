@@ -1,12 +1,24 @@
 import 'styled-components';
+import { EFont } from '../assets/fonts';
+
+type Font = {
+	regular: EFont;
+	italic?: EFont;
+	bold?: EFont;
+	boldItalic?: EFont;
+};
 
 declare module 'styled-components' {
 	export interface DefaultTheme {
-		fontSizes: {
-			default: number;
-			title: number;
-			subtitle: number;
-			label: number;
+		fonts: {
+			main: Font;
+			alternative: Font;
+			sizes: {
+				default: number;
+				title: number;
+				subtitle: number;
+				label: number;
+			};
 		};
 		margins: {
 			large: number;
@@ -14,7 +26,11 @@ declare module 'styled-components' {
 			small: number;
 			tiny: number;
 		};
-		colors: {}; // TODO
-		components: {}; // TODO
+		colors: {
+			primary: string;
+			text: string;
+		};
+		components: {
+		};
 	}
 }
