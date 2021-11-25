@@ -32,6 +32,7 @@ const defaultTheme: DefaultTheme = {
 	colors: {
 		primary: '#D7263D',
 		text: '#FFFFFF',
+		white: '#FFFFFF',
 	},
 	components: {
 		button: {
@@ -45,9 +46,12 @@ const defaultTheme: DefaultTheme = {
 			borderRadius: 10,
 			height: 36,
 		},
+		largeNumber: {
+			borderRadius: 20,
+			minHeight: 80,
+		},
 		numberInput: {
 			backgroundColor: '#FFFFFF33',
-			borderRadius: 20,
 		},
 	},
 };

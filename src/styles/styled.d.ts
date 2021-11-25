@@ -29,6 +29,7 @@ declare module 'styled-components' {
 		colors: {
 			primary: string;
 			text: string;
+			white: string;
 		};
 		components: {
 			button: {
@@ -42,9 +43,12 @@ declare module 'styled-components' {
 				borderRadius: number;
 				height: number;
 			};
+			largeNumber: {
+				borderRadius: number;
+				minHeight: number;
+			};
 			numberInput: {
 				backgroundColor: string;
-				borderRadius: number;
 			};
 		};
 	}
