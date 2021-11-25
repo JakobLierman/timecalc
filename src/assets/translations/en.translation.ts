@@ -8,6 +8,9 @@ const translations: TTranslation = {
 		title: 'Accuracy',
 		inMinutes: 'in minutes',
 	},
+	result: {
+		title: 'Result',
+	},
 };
 
 export default translations;

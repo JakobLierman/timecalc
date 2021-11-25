@@ -4,4 +4,7 @@ export type TTranslation = {
 		title: string;
 		inMinutes: string;
 	};
+	result: {
+		title: string;
+	};
 };
