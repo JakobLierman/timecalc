@@ -10,6 +10,7 @@ const translations: TTranslation = {
 	},
 	result: {
 		title: 'Result',
+		exactTime: 'Exact time:',
 	},
 };
 

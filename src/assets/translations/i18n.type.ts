@@ -6,5 +6,6 @@ export type TTranslation = {
 	};
 	result: {
 		title: string;
+		exactTime: string;
 	};
 };
