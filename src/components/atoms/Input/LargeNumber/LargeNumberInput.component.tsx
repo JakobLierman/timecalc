@@ -31,13 +31,15 @@ const LargeNumberInput: FC<TComponentProps<TProps>> = ({
 	const inputRef = useRef<TextInput>(null);
 
 	const [fontSize, setFontSize] = useState<number>(90);
-	const [value, setValue] = useState<number>();
+	const [textValue, setTextValue] = useState<string>(DateUtils.displayTime(defaultValue, true));
 
 	const onChange = (text: string): void => {
+		if (text === '') setTextValue(text);
+
 		const num = +text;
 		if (isNaN(num)) return;
 
-		setValue(num);
+		setTextValue(text);
 	};
 
 	const onBlur = ({ nativeEvent }: NativeSyntheticEvent<TextInputFocusEventData>) => {
@@ -45,28 +47,30 @@ const LargeNumberInput: FC<TComponentProps<TProps>> = ({
 
 		if (num > maximum) {
 			// TODO: Toast
-			setValue(maximum);
+			setTextValue(DateUtils.displayTime(maximum, true));
 
 			return;
 		}
 
 		if (num < minimum) {
 			// TODO: Toast
-			setValue(minimum);
+			setTextValue(DateUtils.displayTime(minimum, true));
 
 			return;
 		}
+
+		textValue?.length !== 2 && setTextValue(DateUtils.displayTime(num, true));
 	};
 
 	useEffect(() => {
 		(async () => {
 			await TimeoutUtils.wait(300);
-			if (value != null) onChangeValue(value);
+			if (textValue != null && textValue !== '') onChangeValue(+textValue);
 		})();
-	}, [value]);
+	}, [textValue]);
 
-	const onLayout = (event: LayoutChangeEvent): void => {
-		const { width, height } = event.nativeEvent.layout;
+	const onLayout = ({ nativeEvent }: LayoutChangeEvent): void => {
+		const { width, height } = nativeEvent.layout;
 		const newFontSize = (width > height ? height : width) * 0.75;
 
 		if (fontSize !== newFontSize) setFontSize(newFontSize);
@@ -90,7 +94,7 @@ const LargeNumberInput: FC<TComponentProps<TProps>> = ({
 				selectTextOnFocus={true}
 				textAlign="center"
 				textAlignVertical="center"
-				value={DateUtils.displayTime(value || defaultValue, !inputRef.current?.isFocused())}
+				value={textValue || DateUtils.displayTime(defaultValue, !inputRef.current?.isFocused())}
 			/>
 		</Styled.Container>
 	);
