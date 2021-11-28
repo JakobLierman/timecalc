@@ -1,5 +1,11 @@
 export type TTranslation = {
 	title: string;
+	duration: {
+		title: string;
+	};
+	endTime: {
+		title: string;
+	};
 	accuracy: {
 		title: string;
 		inMinutes: string;
