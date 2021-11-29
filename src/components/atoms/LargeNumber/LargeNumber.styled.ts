@@ -13,6 +13,7 @@ const Container = styled.View`
 const NumberText = styled(TextComponent)`
 	color: ${({ theme }) => theme.colors.primary};
 	font-family: ${({ theme }) => theme.fonts.alternative.bold};
+	font-weight: 800;
 	font-size: ${({ theme }) => theme.components.largeNumber.fontSize}px;
 	text-align: center;
 `;

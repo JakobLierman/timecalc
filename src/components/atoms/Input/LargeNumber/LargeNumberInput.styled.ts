@@ -11,6 +11,7 @@ const NumberText = styled.TextInput`
 
 	color: ${({ theme }) => theme.colors.text};
 	font-family: ${({ theme }) => theme.fonts.alternative.bold};
+	font-weight: 800;
 	font-size: ${({ theme }) => theme.components.largeNumber.fontSize}px;
 `;
 
