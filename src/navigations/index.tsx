@@ -1,10 +1,14 @@
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {
+	createNativeStackNavigator,
+	NativeStackNavigationOptions,
+} from '@react-navigation/native-stack';
 import { t } from 'i18n-js';
 import React, { FC } from 'react';
 
-import HomeScreen from '../screens/Home.screen';
-import SettingsScreen from '../screens/Settings.screen';
+import { useTheme } from '../hooks';
+import HomeScreen from '../screens/Home/Home.screen';
+import SettingsScreen from '../screens/Settings/Settings.screen';
 
 export enum ERootRouteNames {
 	HOME = 'Home',
@@ -19,13 +23,25 @@ export type TRootStackParamList = {
 const Stack = createNativeStackNavigator<TRootStackParamList>();
 
 const RootNavigator: FC = () => {
-	const homeScreenOptions = {
+	const theme = useTheme();
+
+	const screenOptions: NativeStackNavigationOptions = {
+		headerBackTitle: t('back'),
+		headerTintColor: theme.colors.text,
+		headerShadowVisible: true,
+		headerStyle: { backgroundColor: theme.colors.primary },
+		headerLargeStyle: { backgroundColor: theme.colors.primary },
+		headerLargeTitle: true,
+		headerLargeTitleShadowVisible: false,
+	};
+
+	const homeScreenOptions: NativeStackNavigationOptions = {
 		title: t('title'),
 	};
 
 	return (
 		<NavigationContainer>
-			<Stack.Navigator>
+			<Stack.Navigator screenOptions={screenOptions}>
 				<Stack.Screen
 					name={ERootRouteNames.HOME}
 					component={HomeScreen}

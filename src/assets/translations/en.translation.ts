@@ -4,6 +4,7 @@ import { TTranslation } from './i18n.type';
 
 const translations: TTranslation = {
 	title: app.expo.name,
+	back: 'Back',
 	duration: {
 		title: 'Duration',
 	},

@@ -1,5 +1,6 @@
 export type TTranslation = {
 	title: string;
+	back: string;
 	duration: {
 		title: string;
 	};
