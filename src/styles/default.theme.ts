@@ -1,6 +1,10 @@
 import { DefaultTheme } from 'styled-components';
 
 import { EFont } from '../assets/fonts';
+import ColorUtils, { DarkLightHex } from '../utils/color.utils';
+
+const primaryColor = '#D7263D';
+const textColor: DarkLightHex = { dark: '#000000', light: '#FFFFFF' };
 
 const defaultTheme: DefaultTheme = {
 	fonts: {
@@ -30,8 +34,8 @@ const defaultTheme: DefaultTheme = {
 		tiny: 4,
 	},
 	colors: {
-		primary: '#D7263D',
-		text: '#FFFFFF',
+		primary: primaryColor,
+		text: ColorUtils.getContrastColor(primaryColor, textColor),
 		white: '#FFFFFF',
 	},
 	components: {
