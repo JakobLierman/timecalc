@@ -44,6 +44,7 @@ declare module 'styled-components' {
 				height: number;
 			};
 			largeNumber: {
+				fontSize: number;
 				borderRadius: number;
 				minHeight: number;
 			};

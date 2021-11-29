@@ -51,6 +51,7 @@ const defaultTheme: DefaultTheme = {
 			height: 36,
 		},
 		largeNumber: {
+			fontSize: 64,
 			borderRadius: 20,
 			minHeight: 80,
 		},

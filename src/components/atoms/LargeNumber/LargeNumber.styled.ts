@@ -10,10 +10,10 @@ const Container = styled.View`
 	border-radius: ${({ theme }) => theme.components.largeNumber.borderRadius}px;
 `;
 
-const NumberText = styled(TextComponent)<{ fontSize: number }>`
+const NumberText = styled(TextComponent)`
 	color: ${({ theme }) => theme.colors.primary};
 	font-family: ${({ theme }) => theme.fonts.alternative.bold};
-	font-size: ${({ fontSize }) => fontSize}px;
+	font-size: ${({ theme }) => theme.components.largeNumber.fontSize}px;
 	text-align: center;
 `;
 

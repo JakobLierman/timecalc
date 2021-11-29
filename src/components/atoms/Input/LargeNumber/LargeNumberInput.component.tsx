@@ -1,10 +1,5 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
-import {
-	LayoutChangeEvent,
-	NativeSyntheticEvent,
-	TextInput,
-	TextInputFocusEventData,
-} from 'react-native';
+import { NativeSyntheticEvent, TextInput, TextInputFocusEventData } from 'react-native';
 
 import DateUtils from '../../../../utils/date.utils';
 import TimeoutUtils from '../../../../utils/timeout.utils';
@@ -30,7 +25,6 @@ const LargeNumberInput: FC<TComponentProps<TProps>> = ({
 
 	const inputRef = useRef<TextInput>(null);
 
-	const [fontSize, setFontSize] = useState<number>(90);
 	const [textValue, setTextValue] = useState<string>(DateUtils.displayTime(defaultValue, true));
 
 	const onChange = (text: string): void => {
@@ -69,23 +63,15 @@ const LargeNumberInput: FC<TComponentProps<TProps>> = ({
 		})();
 	}, [textValue]);
 
-	const onLayout = ({ nativeEvent }: LayoutChangeEvent): void => {
-		const { width, height } = nativeEvent.layout;
-		const newFontSize = (width > height ? height : width) * 0.75;
-
-		if (fontSize !== newFontSize) setFontSize(newFontSize);
-	};
-
 	// TODO: Add scrolling number selector
 
 	return (
-		<Styled.Container onLayout={onLayout} style={style}>
+		<Styled.Container style={style}>
 			<Styled.NumberText
 				ref={inputRef}
 				autoCompleteType="off"
 				blurOnSubmit={true}
 				defaultValue={DateUtils.displayTime(defaultValue, true)}
-				fontSize={fontSize}
 				keyboardType="number-pad"
 				maxLength={2}
 				onBlur={onBlur}

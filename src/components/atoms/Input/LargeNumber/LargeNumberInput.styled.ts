@@ -6,12 +6,12 @@ const Container = styled.View`
 	border-radius: ${({ theme }) => theme.components.largeNumber.borderRadius}px;
 `;
 
-const NumberText = styled.TextInput<{ fontSize: number }>`
+const NumberText = styled.TextInput`
 	flex: 1;
 
 	color: ${({ theme }) => theme.colors.text};
 	font-family: ${({ theme }) => theme.fonts.alternative.bold};
-	font-size: ${({ fontSize }) => fontSize}px;
+	font-size: ${({ theme }) => theme.components.largeNumber.fontSize}px;
 `;
 
 export default {
