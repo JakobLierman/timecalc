@@ -24,7 +24,12 @@ export const App: FC = () => {
 		<ThemeProvider theme={theme}>
 			<SafeAreaProvider>
 				<RootNavigator />
-				<StatusBar style={statusBarStyle} translucent={true} />
+				<StatusBar
+					style={statusBarStyle}
+					translucent={true}
+					backgroundColor={theme.colors.primary}
+					animated={true}
+				/>
 			</SafeAreaProvider>
 		</ThemeProvider>
 	);
