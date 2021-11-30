@@ -28,10 +28,10 @@ const RootNavigator: FC = () => {
 	const screenOptions: NativeStackNavigationOptions = {
 		headerBackTitle: t('back'),
 		headerTintColor: theme.colors.text,
-		headerShadowVisible: true,
 		headerStyle: { backgroundColor: theme.colors.primary },
-		headerLargeStyle: { backgroundColor: theme.colors.primary },
+		headerShadowVisible: true,
 		headerLargeTitle: true,
+		headerLargeStyle: { backgroundColor: theme.colors.primary },
 		headerLargeTitleShadowVisible: false,
 	};
 
