@@ -34,6 +34,7 @@ declare module 'styled-components' {
 		components: {
 			button: {
 				fontSize: number;
+				disabledOpacity: number;
 			};
 			selectionButton: {
 				backgroundColor: {

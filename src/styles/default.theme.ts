@@ -41,6 +41,7 @@ const defaultTheme: DefaultTheme = {
 	components: {
 		button: {
 			fontSize: 20,
+			disabledOpacity: 0.4,
 		},
 		selectionButton: {
 			backgroundColor: {
