@@ -18,7 +18,8 @@ const Result: FC<TComponentProps<TProps>> = ({ time, exactTime, style }) => {
 		`${t('result.exactTime')} ${DateUtils.displayTime(
 			exactTime.hours,
 			true,
-		)}:${DateUtils.displayTime(exactTime.minutes, true)}`;
+			true,
+		)}:${DateUtils.displayTime(exactTime.minutes, true, true)}`;
 
 	return (
 		<Section title={t('result.title')} subtext={exactTimeText} style={style}>

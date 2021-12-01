@@ -7,15 +7,16 @@ import Styled from './ResultTime.styled';
 
 type TProps = {
 	time: TTime;
+	allowNegative?: boolean;
 };
 
-const ResultTime: FC<TComponentProps<TProps>> = ({ time, style }) => {
+const ResultTime: FC<TComponentProps<TProps>> = ({ time, allowNegative = false, style }) => {
 	const { hours, minutes } = time;
 
 	return (
 		<Styled.Container style={style}>
-			<Styled.LargeNumber isFirst={true} value={hours} />
-			<Styled.LargeNumber isLast={true} value={minutes} />
+			<Styled.LargeNumber isFirst={true} value={hours} allowNegative={allowNegative} />
+			<Styled.LargeNumber isLast={true} value={minutes} allowNegative={allowNegative} />
 		</Styled.Container>
 	);
 };

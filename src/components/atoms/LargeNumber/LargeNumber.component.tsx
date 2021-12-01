@@ -7,12 +7,13 @@ import Styled from './LargeNumber.styled';
 
 type TProps = {
 	value: number;
+	allowNegative?: boolean;
 };
 
-const LargeNumber: FC<TComponentProps<TProps>> = ({ value, style }) => {
+const LargeNumber: FC<TComponentProps<TProps>> = ({ value, allowNegative = false, style }) => {
 	return (
 		<Styled.Container style={style}>
-			<Styled.NumberText>{DateUtils.displayTime(value, true)}</Styled.NumberText>
+			<Styled.NumberText>{DateUtils.displayTime(value, true, allowNegative)}</Styled.NumberText>
 		</Styled.Container>
 	);
 };
