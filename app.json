@@ -3,6 +3,7 @@
     "name": "TimeCalc",
     "slug": "timecalc",
     "version": "1.0.0",
+    "primaryColor": "#D7263D",
     "orientation": "portrait",
     "icon": "./src/assets/images/icon.png",
     "splash": {
@@ -28,6 +29,8 @@
         "foregroundImage": "./src/assets/images/adaptive-icon.png",
         "backgroundColor": "#D7263D"
       }
-    }
+    },
+    "description": "",
+    "githubUrl": "https://github.com/JakobLierman/timecalc"
   }
 }
