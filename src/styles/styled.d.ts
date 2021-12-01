@@ -1,4 +1,6 @@
 import 'styled-components';
+import { TextInputIOSProps } from 'react-native';
+
 import { EFont } from '../assets/fonts';
 
 type Font = {
@@ -32,6 +34,9 @@ declare module 'styled-components' {
 			white: string;
 		};
 		components: {
+			keyboard: {
+				appearance: TextInputIOSProps.keyboardAppearance;
+			};
 			button: {
 				fontSize: number;
 				disabledOpacity: number;

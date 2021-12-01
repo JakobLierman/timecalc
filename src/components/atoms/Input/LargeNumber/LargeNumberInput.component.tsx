@@ -69,17 +69,11 @@ const LargeNumberInput: FC<TComponentProps<TProps>> = ({
 		<Styled.Container style={style}>
 			<Styled.NumberText
 				ref={inputRef}
-				autoCompleteType="off"
 				blurOnSubmit={true}
 				defaultValue={DateUtils.displayTime(defaultValue, true)}
-				keyboardType="number-pad"
-				maxLength={2}
 				onBlur={onBlur}
 				onChangeText={onChange}
-				returnKeyType="done"
 				selectTextOnFocus={true}
-				textAlign="center"
-				textAlignVertical="center"
 				value={textValue || DateUtils.displayTime(defaultValue, !inputRef.current?.isFocused())}
 			/>
 		</Styled.Container>

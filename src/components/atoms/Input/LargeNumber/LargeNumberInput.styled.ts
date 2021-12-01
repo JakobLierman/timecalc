@@ -6,7 +6,16 @@ const Container = styled.View`
 	border-radius: ${({ theme }) => theme.components.largeNumber.borderRadius}px;
 `;
 
-const NumberText = styled.TextInput`
+const NumberText = styled.TextInput.attrs(({ theme }) => ({
+	autoCompleteType: 'off',
+	autoCorrect: false,
+	keyboardAppearance: theme.components.keyboard.appearance,
+	keyboardType: 'number-pad',
+	maxLength: 2,
+	returnKeyType: 'done',
+	textAlign: 'center',
+	textAlignVertical: 'center',
+}))`
 	flex: 1;
 
 	color: ${({ theme }) => theme.colors.text};

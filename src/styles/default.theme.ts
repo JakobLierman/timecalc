@@ -39,6 +39,9 @@ const defaultTheme: DefaultTheme = {
 		white: '#FFFFFF',
 	},
 	components: {
+		keyboard: {
+			appearance: 'light',
+		},
 		button: {
 			fontSize: 20,
 			disabledOpacity: 0.4,
