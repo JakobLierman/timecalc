@@ -86,4 +86,4 @@ const LargeNumberInput: FC<TComponentProps<TProps>> = ({
 	);
 };
 
-export default LargeNumberInput;
+export default React.memo(LargeNumberInput);

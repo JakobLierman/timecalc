@@ -20,4 +20,4 @@ const SelectionButton: FC<TComponentProps<TProps>> = ({ selected, onSelect, valu
 	);
 };
 
-export default SelectionButton;
+export default React.memo(SelectionButton);

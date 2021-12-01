@@ -32,4 +32,4 @@ const SelectionRow: FC<TComponentProps<TProps>> = ({
 	);
 };
 
-export default SelectionRow;
+export default React.memo(SelectionRow);

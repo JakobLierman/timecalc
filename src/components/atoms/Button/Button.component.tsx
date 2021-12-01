@@ -11,4 +11,4 @@ const Button: FC<TComponentProps<TProps>> = ({ style }) => {
 	return <View style={style}>{/* TODO */}</View>;
 };
 
-export default Button;
+export default React.memo(Button);

@@ -93,4 +93,4 @@ const TimeInput: FC<TComponentProps<TProps>> = ({
 	);
 };
 
-export default TimeInput;
+export default React.memo(TimeInput);

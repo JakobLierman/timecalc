@@ -11,4 +11,4 @@ const Input: FC<TComponentProps<TProps>> = ({ style }) => {
 	return <View style={style}>{/* TODO */}</View>;
 };
 
-export default Input;
+export default React.memo(Input);
