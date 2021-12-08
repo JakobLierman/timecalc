@@ -27,18 +27,45 @@ const LargeNumberInput: FC<TComponentProps<TProps>> = ({
 
 	const [textValue, setTextValue] = useState<string>(DateUtils.displayTime(defaultValue, true));
 
-	const onChange = (text: string): void => {
-		if (text === '') setTextValue(text);
-
+	/**
+	 * Gets numeric value from text value
+	 * @param text
+	 */
+	const getValue = (text: string): number | undefined => {
 		const num = +text;
-		if (isNaN(num)) return;
 
-		setTextValue(text);
+		return isNaN(num) ? undefined : num;
 	};
 
-	const onBlur = ({ nativeEvent }: NativeSyntheticEvent<TextInputFocusEventData>) => {
-		const num = +nativeEvent.text;
+	/**
+	 * Block invalid characters on typing
+	 * @param text
+	 */
+	const onChange = (text: string): void => {
+		const cleanText = text.trim();
+		if (cleanText === '') return setTextValue(cleanText);
 
+		const num = +cleanText;
+		if (isNaN(num)) return;
+
+		setTextValue(cleanText);
+	};
+
+	/**
+	 * Check valid number on blur
+	 * @param nativeEvent
+	 */
+	const onBlur = ({ nativeEvent }: NativeSyntheticEvent<TextInputFocusEventData>) => {
+		if (isFocused) setIsFocused(false);
+
+		setNumber(+nativeEvent.text);
+	};
+
+	/**
+	 * Set number in text field
+	 * @param num
+	 */
+	const setNumber = (num: number): void => {
 		if (num > maximum) {
 			// TODO: Toast
 			setTextValue(DateUtils.displayTime(maximum, true));
@@ -56,9 +83,13 @@ const LargeNumberInput: FC<TComponentProps<TProps>> = ({
 		textValue?.length !== 2 && setTextValue(DateUtils.displayTime(num, true));
 	};
 
+	/**
+	 * Delays actual value change
+	 */
 	useEffect(() => {
 		(async () => {
 			await TimeoutUtils.wait(300);
+
 			if (textValue != null && textValue !== '') onChangeValue(+textValue);
 		})();
 	}, [textValue]);
@@ -74,7 +105,11 @@ const LargeNumberInput: FC<TComponentProps<TProps>> = ({
 				onBlur={onBlur}
 				onChangeText={onChange}
 				selectTextOnFocus={true}
-				value={textValue || DateUtils.displayTime(defaultValue, !inputRef.current?.isFocused())}
+				value={
+					textValue == null
+						? DateUtils.displayTime(defaultValue, !inputRef.current?.isFocused())
+						: textValue
+				}
 			/>
 		</Styled.Container>
 	);
