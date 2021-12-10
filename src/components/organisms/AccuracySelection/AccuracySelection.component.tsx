@@ -36,4 +36,4 @@ const AccuracySelection: FC<TComponentProps<TProps>> = ({
 	);
 };
 
-export default AccuracySelection;
+export default React.memo(AccuracySelection);

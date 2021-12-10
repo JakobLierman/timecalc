@@ -28,4 +28,4 @@ const Result: FC<TComponentProps<TProps>> = ({ time, exactTime, style }) => {
 	);
 };
 
-export default Result;
+export default React.memo(Result);

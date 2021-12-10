@@ -21,4 +21,4 @@ const ResultTime: FC<TComponentProps<TProps>> = ({ time, allowNegative = false, 
 	);
 };
 
-export default React.memo(ResultTime);
+export default ResultTime;

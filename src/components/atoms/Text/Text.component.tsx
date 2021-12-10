@@ -9,4 +9,4 @@ const Text: FC<TComponentProps<TextProps, StyleProp<TextStyle>>> = ({ ...props }
 	return <Styled.Text {...props} />;
 };
 
-export default React.memo(Text);
+export default Text;

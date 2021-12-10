@@ -9,4 +9,4 @@ const Subtitle: FC<TComponentProps<TextProps, StyleProp<TextStyle>>> = ({ ...pro
 	return <Styled.Subtitle {...props} />;
 };
 
-export default React.memo(Subtitle);
+export default Subtitle;

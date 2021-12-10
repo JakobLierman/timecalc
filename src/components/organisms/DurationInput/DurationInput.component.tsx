@@ -31,4 +31,4 @@ const DurationInput: FC<TComponentProps<TProps>> = ({
 	);
 };
 
-export default DurationInput;
+export default React.memo(DurationInput);

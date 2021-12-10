@@ -55,4 +55,4 @@ const EndTimeInput: FC<TComponentProps<TProps>> = ({
 	);
 };
 
-export default EndTimeInput;
+export default React.memo(EndTimeInput);

@@ -18,4 +18,4 @@ const LargeNumber: FC<TComponentProps<TProps>> = ({ value, allowNegative = false
 	);
 };
 
-export default React.memo(LargeNumber);
+export default LargeNumber;
