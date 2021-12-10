@@ -43,6 +43,12 @@ const LargeNumberInput: FC<TComponentProps<TProps>> = ({
 	 */
 	const onBlur = () => {
 		setIsFocused(false);
+
+		const num = +textValue;
+
+		if (num >= maximum) return setTextValue(DateUtils.displayTime(maximum, true));
+		if (num <= minimum) return setTextValue(DateUtils.displayTime(minimum, true));
+
 		setTextValue(DateUtils.displayTime(+textValue, true));
 	};
 

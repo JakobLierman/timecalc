@@ -19,56 +19,19 @@ const TimeInput: FC<TComponentProps<TProps>> = ({
 	maxTime = { hours: 23, minutes: 59 },
 	style,
 }) => {
-	const [time, setTime] = useState<TTime>(defaultTime);
-
-	const onChangeHours = (hours: number): void => {
-		if (hours > maxTime.hours) {
-			return setTime(maxTime);
-		}
-
-		if (hours < minTime.hours) {
-			return setTime(minTime);
-		}
-
-		if (hours === maxTime.hours) {
-			return setTime((prevTime) => ({
-				hours,
-				minutes: prevTime.minutes > maxTime.minutes ? maxTime.minutes : prevTime.minutes,
-			}));
-		}
-
-		if (hours === minTime.hours) {
-			return setTime((prevTime) => ({
-				hours,
-				minutes: prevTime.minutes < minTime.minutes ? minTime.minutes : prevTime.minutes,
-			}));
-		}
-
-		setTime({ ...time, hours });
-	};
-
-	const onChangeMinutes = (minutes: number): void => {
-		if (time.hours === maxTime.hours && minutes > maxTime.minutes) {
-			return setTime({ ...time, minutes: maxTime.minutes });
-		}
-
-		if (time.hours === minTime.hours && minutes < minTime.minutes) {
-			return setTime({ ...time, minutes: minTime.minutes });
-		}
-
-		setTime({ ...time, minutes });
-	};
+	const [hours, setHours] = useState<number>(defaultTime.hours);
+	const [minutes, setMinutes] = useState<number>(defaultTime.minutes);
 
 	useEffect(() => {
-		onChangeTime(time);
-	}, [time]);
+		onChangeTime({ hours, minutes });
+	}, [hours, minutes]);
 
 	return (
 		<Styled.Container style={style}>
 			<Styled.NumberInput
 				isFirst={true}
 				defaultValue={defaultTime.hours}
-				onChangeValue={onChangeHours}
+				onChangeValue={setHours}
 				minimum={minTime.hours}
 				maximum={maxTime.hours}
 				stepButtons={true}
@@ -76,7 +39,7 @@ const TimeInput: FC<TComponentProps<TProps>> = ({
 			<Styled.NumberInput
 				isLast={true}
 				defaultValue={defaultTime.minutes}
-				onChangeValue={onChangeMinutes}
+				onChangeValue={setMinutes}
 				minimum={minTime.minutes}
 				maximum={maxTime.minutes}
 				stepButtons={true}
