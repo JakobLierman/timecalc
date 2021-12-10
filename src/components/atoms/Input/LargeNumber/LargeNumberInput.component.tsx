@@ -2,7 +2,6 @@ import { impactAsync } from 'expo-haptics';
 import React, { FC, useEffect, useState } from 'react';
 
 import DateUtils from '../../../../utils/date.utils';
-import TimeoutUtils from '../../../../utils/timeout.utils';
 import { TComponentProps } from '../../../types';
 
 import Styled from './LargeNumberInput.styled';
@@ -56,12 +55,7 @@ const LargeNumberInput: FC<TComponentProps<TProps>> = ({
 	 * Delays actual value change
 	 */
 	useEffect(() => {
-		if (isFocused) return;
-
-		(async () => {
-			await TimeoutUtils.wait(350);
-			onChangeValue(+textValue);
-		})();
+		if (!isFocused) onChangeValue(+textValue);
 	}, [textValue, isFocused]);
 
 	const onFocus = (): void => {
