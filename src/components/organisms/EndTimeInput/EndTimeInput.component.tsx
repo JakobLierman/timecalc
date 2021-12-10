@@ -1,4 +1,4 @@
-import { addDays, format, getHours, getMinutes, setHours, setMinutes } from 'date-fns';
+import { addDays, format, getHours, getMinutes, setHours, setMinutes, setSeconds } from 'date-fns';
 import { t } from 'i18n-js';
 import React, { FC, useEffect, useState } from 'react';
 
@@ -11,14 +11,20 @@ import { TComponentProps } from '../../types';
 type TProps = {
 	defaultEndTime: Date;
 	onChangeEndTime: (endTimeValue: Date) => void;
+	addedDays?: number;
 };
 
-const EndTimeInput: FC<TComponentProps<TProps>> = ({ defaultEndTime, onChangeEndTime, style }) => {
+const EndTimeInput: FC<TComponentProps<TProps>> = ({
+	defaultEndTime,
+	onChangeEndTime,
+	addedDays,
+	style,
+}) => {
 	const [date, setDate] = useState<Date>();
 
 	const onChangeTime = (time: TTime) => {
 		const { hours, minutes } = time;
-		let newDate = new Date();
+		let newDate = setSeconds(new Date(), 0);
 
 		const hoursDiff = hours - getHours(newDate);
 
@@ -38,7 +44,7 @@ const EndTimeInput: FC<TComponentProps<TProps>> = ({ defaultEndTime, onChangeEnd
 
 	const dateSubtext =
 		date &&
-		format(date, 'PPP', {
+		format(addDays(date, addedDays || 0), 'PPP', {
 			/* locale: TODO */
 		});
 

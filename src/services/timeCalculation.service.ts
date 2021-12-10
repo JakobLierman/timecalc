@@ -1,13 +1,17 @@
 import {
+	addDays,
 	differenceInMinutes,
 	hoursToMinutes,
 	minutesToHours,
-	subDays,
 	subHours,
 	subMinutes,
 } from 'date-fns';
 
 import { TTime } from '../domain/time.type';
+
+type TDelayOptions = {
+	addedDays?: number;
+};
 
 class TimeCalculationService {
 	private static singletonInstance: TimeCalculationService;
@@ -61,23 +65,25 @@ class TimeCalculationService {
 	 * @param duration
 	 * @param endTime
 	 */
-	public static calculateDelayTime = (duration: TTime, endTime: Date): TTime => {
+	public static calculateDelayTime = (duration: TTime, endTime: Date): TTime & TDelayOptions => {
 		const now = new Date();
 		// Calculate start time
 		let startTime = TimeCalculationService.calculateStartTime(duration, endTime);
+		let addedDays = 0;
 
 		// Calculate exact difference (rounded by minute)
 		let diffMinutes = differenceInMinutes(startTime, now);
 
 		while (diffMinutes < 0) {
-			startTime = subDays(startTime, 1);
+			addedDays++;
+			startTime = addDays(startTime, addedDays);
 			diffMinutes = differenceInMinutes(startTime, now);
 		}
 
 		const diffHours = minutesToHours(diffMinutes);
 
 		// Return difference (delay)
-		return { hours: diffHours, minutes: diffMinutes - hoursToMinutes(diffHours) };
+		return { hours: diffHours, minutes: diffMinutes - hoursToMinutes(diffHours), addedDays };
 	};
 }
 

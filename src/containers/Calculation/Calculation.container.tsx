@@ -1,4 +1,4 @@
-import { add } from 'date-fns';
+import { add, setSeconds } from 'date-fns';
 import React, { FC, useState } from 'react';
 
 import { TComponentProps } from '../../components/types';
@@ -13,7 +13,7 @@ const Calculation: FC<TComponentProps> = () => {
 	const [duration, setDuration] = useState<TTime>(defaultDuration);
 
 	// End time
-	const defaultEndTime: Date = add(new Date(), {
+	const defaultEndTime: Date = add(setSeconds(new Date(), 0), {
 		hours: defaultDuration.hours + 1,
 		minutes: defaultDuration.minutes + 1,
 	});
@@ -25,13 +25,17 @@ const Calculation: FC<TComponentProps> = () => {
 	const [accuracy, setAccuracy] = useState<typeof accuracies[number]>(defaultAccuracy);
 
 	// Result delay time
-	const result: TTime = TimeCalculationService.calculateDelayTime(duration, endTime);
-	const roundedResult: TTime = TimeCalculationService.roundTime(result, accuracy);
+	const result = TimeCalculationService.calculateDelayTime(duration, endTime);
+	const roundedResult = TimeCalculationService.roundTime(result, accuracy);
 
 	return (
 		<Styled.Container>
 			<Styled.DurationSection defaultDuration={defaultDuration} onChangeDuration={setDuration} />
-			<Styled.EndDateSection defaultEndTime={defaultEndTime} onChangeEndTime={setEndTime} />
+			<Styled.EndDateSection
+				defaultEndTime={defaultEndTime}
+				onChangeEndTime={setEndTime}
+				addedDays={result.addedDays}
+			/>
 			<Styled.AccuracySection
 				accuracies={accuracies}
 				defaultAccuracy={defaultAccuracy}
