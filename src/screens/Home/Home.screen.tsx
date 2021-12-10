@@ -10,7 +10,7 @@ type TProps = NativeStackScreenProps<TRootStackParamList, ERootRouteNames.HOME>;
 
 const HomeScreen: FC<TProps> = () => {
 	return (
-		<Styled.ScrollView keyboardDismissMode="interactive">
+		<Styled.ScrollView>
 			<Calculation />
 		</Styled.ScrollView>
 	);

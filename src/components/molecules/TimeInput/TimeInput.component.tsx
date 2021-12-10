@@ -23,50 +23,40 @@ const TimeInput: FC<TComponentProps<TProps>> = ({
 
 	const onChangeHours = (hours: number): void => {
 		if (hours > maxTime.hours) {
-			setTime(maxTime);
-
-			return;
+			return setTime(maxTime);
 		}
 
 		if (hours < minTime.hours) {
-			setTime(minTime);
-
-			return;
+			return setTime(minTime);
 		}
 
 		if (hours === maxTime.hours) {
-			setTime((prevTime) => ({
+			return setTime((prevTime) => ({
 				hours,
 				minutes: prevTime.minutes > maxTime.minutes ? maxTime.minutes : prevTime.minutes,
 			}));
-
-			return;
 		}
 
 		if (hours === minTime.hours) {
-			setTime((prevTime) => ({
+			return setTime((prevTime) => ({
 				hours,
 				minutes: prevTime.minutes < minTime.minutes ? minTime.minutes : prevTime.minutes,
 			}));
-
-			return;
 		}
 
-		setTime((prevTime) => ({ ...prevTime, hours }));
+		setTime({ ...time, hours });
 	};
 
 	const onChangeMinutes = (minutes: number): void => {
 		if (time.hours === maxTime.hours && minutes > maxTime.minutes) {
-			setTime((prevTime) => ({ ...prevTime, minutes: maxTime.minutes }));
-
-			return;
+			return setTime({ ...time, minutes: maxTime.minutes });
 		}
 
 		if (time.hours === minTime.hours && minutes < minTime.minutes) {
-			setTime((prevTime) => ({ ...prevTime, minutes: minTime.minutes }));
+			return setTime({ ...time, minutes: minTime.minutes });
 		}
 
-		setTime((prevTime) => ({ ...prevTime, minutes }));
+		setTime({ ...time, minutes });
 	};
 
 	useEffect(() => {
