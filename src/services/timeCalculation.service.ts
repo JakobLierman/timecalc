@@ -2,6 +2,7 @@ import {
 	differenceInMinutes,
 	hoursToMinutes,
 	minutesToHours,
+	subDays,
 	subHours,
 	subMinutes,
 } from 'date-fns';
@@ -63,10 +64,16 @@ class TimeCalculationService {
 	public static calculateDelayTime = (duration: TTime, endTime: Date): TTime => {
 		const now = new Date();
 		// Calculate start time
-		const startTime = TimeCalculationService.calculateStartTime(duration, endTime);
+		let startTime = TimeCalculationService.calculateStartTime(duration, endTime);
 
 		// Calculate exact difference (rounded by minute)
-		const diffMinutes = differenceInMinutes(startTime, now);
+		let diffMinutes = differenceInMinutes(startTime, now);
+
+		while (diffMinutes < 0) {
+			startTime = subDays(startTime, 1);
+			diffMinutes = differenceInMinutes(startTime, now);
+		}
+
 		const diffHours = minutesToHours(diffMinutes);
 
 		// Return difference (delay)
