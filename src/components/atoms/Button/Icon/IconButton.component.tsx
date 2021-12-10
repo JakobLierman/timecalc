@@ -30,4 +30,4 @@ const IconButton: FC<TComponentProps<TProps>> = ({
 	);
 };
 
-export default React.memo(IconButton);
+export default IconButton;

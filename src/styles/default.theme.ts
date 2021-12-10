@@ -42,6 +42,9 @@ const defaultTheme: DefaultTheme = {
 		keyboard: {
 			appearance: 'light',
 		},
+		icon: {
+			size: 24,
+		},
 		button: {
 			fontSize: 20,
 			disabledOpacity: 0.4,

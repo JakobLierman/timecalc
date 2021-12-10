@@ -1,5 +1,5 @@
-import React, { FC, useEffect, useRef, useState } from 'react';
-import { NativeSyntheticEvent, TextInput, TextInputFocusEventData } from 'react-native';
+import { impactAsync } from 'expo-haptics';
+import React, { FC, useEffect, useState } from 'react';
 
 import DateUtils from '../../../../utils/date.utils';
 import TimeoutUtils from '../../../../utils/timeout.utils';
@@ -12,6 +12,8 @@ type TProps = {
 	onChangeValue: (num: number) => void;
 	minimum?: number;
 	maximum?: number;
+	stepButtons?: boolean;
+	stepValue?: number;
 };
 
 const LargeNumberInput: FC<TComponentProps<TProps>> = ({
@@ -19,100 +21,84 @@ const LargeNumberInput: FC<TComponentProps<TProps>> = ({
 	onChangeValue,
 	minimum = 0,
 	maximum = 59,
+	stepButtons = false,
+	stepValue = 1,
 	style,
 }) => {
 	// TODO: Add increment decrement buttons on focus
 
-	const inputRef = useRef<TextInput>(null);
-
 	const [textValue, setTextValue] = useState<string>(DateUtils.displayTime(defaultValue, true));
-
-	/**
-	 * Gets numeric value from text value
-	 * @param text
-	 */
-	const getValue = (text: string): number | undefined => {
-		const num = +text;
-
-		return isNaN(num) ? undefined : num;
-	};
+	const [isFocused, setIsFocused] = useState<boolean>(false);
 
 	/**
 	 * Block invalid characters on typing
 	 * @param text
 	 */
 	const onChange = (text: string): void => {
-		const cleanText = text.trim();
-		if (cleanText === '') return setTextValue(cleanText);
-
-		const num = +cleanText;
-		if (isNaN(num)) return;
-
-		setTextValue(cleanText);
+		setTextValue(text.replace(/[^\d]/g, ''));
 	};
 
 	/**
 	 * Check valid number on blur
-	 * @param nativeEvent
 	 */
-	const onBlur = ({ nativeEvent }: NativeSyntheticEvent<TextInputFocusEventData>) => {
-		if (isFocused) setIsFocused(false);
-
-		setNumber(+nativeEvent.text);
-	};
-
-	/**
-	 * Set number in text field
-	 * @param num
-	 */
-	const setNumber = (num: number): void => {
-		if (num > maximum) {
-			// TODO: Toast
-			setTextValue(DateUtils.displayTime(maximum, true));
-
-			return;
-		}
-
-		if (num < minimum) {
-			// TODO: Toast
-			setTextValue(DateUtils.displayTime(minimum, true));
-
-			return;
-		}
-
-		textValue?.length !== 2 && setTextValue(DateUtils.displayTime(num, true));
+	const onBlur = () => {
+		setIsFocused(false);
+		setTextValue(DateUtils.displayTime(+textValue, true));
 	};
 
 	/**
 	 * Delays actual value change
 	 */
 	useEffect(() => {
-		(async () => {
-			await TimeoutUtils.wait(300);
+		if (isFocused) return;
 
-			if (textValue != null && textValue !== '') onChangeValue(+textValue);
+		(async () => {
+			await TimeoutUtils.wait(350);
+			onChangeValue(+textValue);
 		})();
-	}, [textValue]);
+	}, [textValue, isFocused]);
+
+	const onFocus = (): void => {
+		if (!isFocused) setIsFocused(true);
+	};
+
+	/**
+	 * Decrement number by step value
+	 */
+	const decrement = () => {
+		impactAsync();
+		setTextValue(DateUtils.displayTime(+textValue - stepValue, true));
+	};
+
+	/**
+	 * Increment number by step value
+	 */
+	const increment = () => {
+		impactAsync();
+		setTextValue(DateUtils.displayTime(+textValue + stepValue, true));
+	};
 
 	// TODO: Add scrolling number selector
 
 	return (
 		<Styled.Container style={style}>
+			{stepButtons && isFocused && (
+				<Styled.DecrementButton onPress={decrement} disabled={+textValue <= minimum} />
+			)}
 			<Styled.NumberText
-				ref={inputRef}
 				blurOnSubmit={true}
 				defaultValue={DateUtils.displayTime(defaultValue, true)}
 				onBlur={onBlur}
 				onChangeText={onChange}
+				onFocus={onFocus}
 				selectTextOnFocus={true}
-				value={
-					textValue == null
-						? DateUtils.displayTime(defaultValue, !inputRef.current?.isFocused())
-						: textValue
-				}
+				value={textValue}
 			/>
+			{stepButtons && isFocused && (
+				<Styled.IncrementButton onPress={increment} disabled={+textValue >= maximum} />
+			)}
 		</Styled.Container>
 	);
 };
 
-export default React.memo(LargeNumberInput);
+export default LargeNumberInput;

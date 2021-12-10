@@ -71,6 +71,7 @@ const TimeInput: FC<TComponentProps<TProps>> = ({
 				onChangeValue={onChangeHours}
 				minimum={minTime.hours}
 				maximum={maxTime.hours}
+				stepButtons={true}
 			/>
 			<Styled.NumberInput
 				isLast={true}
@@ -78,9 +79,10 @@ const TimeInput: FC<TComponentProps<TProps>> = ({
 				onChangeValue={onChangeMinutes}
 				minimum={minTime.minutes}
 				maximum={maxTime.minutes}
+				stepButtons={true}
 			/>
 		</Styled.Container>
 	);
 };
 
-export default React.memo(TimeInput);
+export default TimeInput;

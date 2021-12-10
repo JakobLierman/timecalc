@@ -1,7 +1,6 @@
 import styled from 'styled-components/native';
 
 const Touchable = styled.TouchableOpacity<{ disabled?: boolean }>`
-	flex: 1;
 	justify-content: center;
 	align-items: center;
 

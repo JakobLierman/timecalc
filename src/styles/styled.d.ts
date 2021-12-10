@@ -37,6 +37,9 @@ declare module 'styled-components' {
 			keyboard: {
 				appearance: TextInputIOSProps.keyboardAppearance;
 			};
+			icon: {
+				size: number;
+			};
 			button: {
 				fontSize: number;
 				disabledOpacity: number;
