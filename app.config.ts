@@ -1,0 +1,61 @@
+import { Android, ExpoConfig, IOS, Splash } from '@expo/config-types';
+
+import packageJson from './package.json';
+
+const asset = (fileName: string): string => `./src/assets/images/${fileName}`;
+
+export default ({ config }: { config: ExpoConfig }): ExpoConfig => {
+	const packageName = `be.jakoblierman.${packageJson.name}`;
+	const primaryColor = '#D7263D';
+
+	const splashConfig: Splash = {
+		...config.splash,
+		image: asset('splash.png'),
+		resizeMode: 'contain',
+		backgroundColor: primaryColor,
+	};
+
+	const iosConfig: IOS = {
+		...config.ios,
+		bundleIdentifier: packageName,
+		supportsTablet: true,
+		infoPlist: {
+			CFBundleAllowMixedLocalizations: true,
+			RCTAsyncStorageExcludeFromBackup: false,
+		},
+	};
+
+	const androidConfig: Android = {
+		...config.android,
+		package: packageName,
+		adaptiveIcon: {
+			foregroundImage: asset('adaptive-icon.png'),
+			backgroundColor: primaryColor,
+		},
+	};
+
+	return {
+		...config,
+		slug: packageJson.name,
+		description: packageJson.description,
+		githubUrl: packageJson.repository.url,
+		primaryColor,
+		orientation: 'portrait',
+		icon: asset('icon.png'),
+		splash: splashConfig,
+		updates: {
+			fallbackToCacheTimeout: 0,
+		},
+		jsEngine: 'hermes',
+		assetBundlePatterns: ['**/*'],
+		ios: iosConfig,
+		android: androidConfig,
+		androidStatusBar: {
+			barStyle: 'dark-content',
+		},
+		androidNavigationBar: {
+			barStyle: 'dark-content',
+			backgroundColor: primaryColor,
+		},
+	};
+};

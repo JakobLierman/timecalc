@@ -1,36 +1,11 @@
 {
-  "expo": {
-    "name": "TimeCalc",
-    "slug": "timecalc",
-    "version": "1.0.0",
-    "primaryColor": "#D7263D",
-    "orientation": "portrait",
-    "icon": "./src/assets/images/icon.png",
-    "splash": {
-      "image": "./src/assets/images/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#D7263D"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true,
-      "infoPlist": {
-        "CFBundleAllowMixedLocalizations": true,
-        "RCTAsyncStorageExcludeFromBackup": false
-      }
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./src/assets/images/adaptive-icon.png",
-        "backgroundColor": "#D7263D"
-      }
-    },
-    "description": "",
-    "githubUrl": "https://github.com/JakobLierman/timecalc"
-  }
+	"expo": {
+		"name": "TimeCalc",
+		"android": {
+			"versionCode": 430000100
+		},
+		"ios": {
+			"buildNumber": "0.1.0"
+		}
+	}
 }
