@@ -39,6 +39,7 @@ export default ({ config }: { config: ExpoConfig }): ExpoConfig => {
 		slug: packageJson.name,
 		description: packageJson.description,
 		githubUrl: packageJson.repository.url,
+		version: packageJson.version,
 		primaryColor,
 		orientation: 'portrait',
 		icon: asset('icon.png'),

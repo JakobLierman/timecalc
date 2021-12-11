@@ -1,11 +1,12 @@
 {
-	"expo": {
-		"name": "TimeCalc",
-		"android": {
-			"versionCode": 430000100
-		},
-		"ios": {
-			"buildNumber": "0.1.0"
-		}
-	}
+  "expo": {
+    "name": "TimeCalc",
+    "entryPoint": "./index.js",
+    "android": {
+      "versionCode": 430000100
+    },
+    "ios": {
+      "buildNumber": "0.1.0"
+    }
+  }
 }
