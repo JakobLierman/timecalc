@@ -1,10 +1,9 @@
-import { applicationName } from 'expo-application';
+import appConfig from '../../../app.json';
 
 import { TTranslation } from './i18n.type';
 
 const translations: TTranslation = {
-	// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-	title: applicationName!,
+	title: appConfig.expo.name,
 	back: 'Back',
 	duration: {
 		title: 'Duration',
