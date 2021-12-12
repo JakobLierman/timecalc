@@ -3,10 +3,10 @@
     "name": "TimeCalc",
     "entryPoint": "./index.js",
     "android": {
-      "versionCode": 430000100
+      "versionCode": 430010000
     },
     "ios": {
-      "buildNumber": "0.1.0"
+      "buildNumber": "1.0.0"
     }
   }
 }
