@@ -52,10 +52,11 @@ export default ({ config }: { config: ExpoConfig }): ExpoConfig => {
 		ios: iosConfig,
 		android: androidConfig,
 		androidStatusBar: {
-			barStyle: 'dark-content',
+			barStyle: 'light-content',
+			translucent: true,
 		},
 		androidNavigationBar: {
-			barStyle: 'dark-content',
+			barStyle: 'light-content',
 			backgroundColor: primaryColor,
 		},
 	};
