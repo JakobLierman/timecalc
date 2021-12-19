@@ -5,7 +5,6 @@ import packageJson from './package.json';
 const asset = (fileName: string): string => `./src/assets/images/${fileName}`;
 
 export default ({ config }: { config: ExpoConfig }): ExpoConfig => {
-	const packageName = `be.jakoblierman.${packageJson.name}`;
 	const primaryColor = '#D7263D';
 
 	const splashConfig: Splash = {
@@ -17,7 +16,6 @@ export default ({ config }: { config: ExpoConfig }): ExpoConfig => {
 
 	const iosConfig: IOS = {
 		...config.ios,
-		bundleIdentifier: packageName,
 		supportsTablet: true,
 		infoPlist: {
 			CFBundleAllowMixedLocalizations: true,
@@ -27,7 +25,6 @@ export default ({ config }: { config: ExpoConfig }): ExpoConfig => {
 
 	const androidConfig: Android = {
 		...config.android,
-		package: packageName,
 		adaptiveIcon: {
 			foregroundImage: asset('adaptive-icon.png'),
 			backgroundColor: primaryColor,

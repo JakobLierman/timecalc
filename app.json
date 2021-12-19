@@ -3,10 +3,12 @@
     "name": "TimeCalc",
     "entryPoint": "./index.js",
     "android": {
-      "versionCode": 430010000
+      "versionCode": 440010000,
+      "package": "be.jakoblierman.timecalc"
     },
     "ios": {
-      "buildNumber": "1.0.0"
+      "buildNumber": "1.0.0",
+      "bundleIdentifier": "be.jakoblierman.timecalcapp"
     }
   }
 }
