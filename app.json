@@ -3,13 +3,13 @@
     "name": "TimeCalc",
     "entryPoint": "./index.js",
     "android": {
-      "versionCode": 440010000,
+      "versionCode": 440010100,
       "package": "be.jakoblierman.timecalc",
       "playStoreUrl": "https://play.google.com/store/apps/details?id=be.jakoblierman.timecalc",
       "googleServicesFile": "./google-services.json"
     },
     "ios": {
-      "buildNumber": "1.0.0",
+      "buildNumber": "1.1.0",
       "bundleIdentifier": "be.jakoblierman.timecalcapp",
       "appStoreUrl": "https://apps.apple.com/be/app/timecalc-delay-time-programs/id1601045398",
       "googleServicesFile": "./GoogleService-Info.plist"
