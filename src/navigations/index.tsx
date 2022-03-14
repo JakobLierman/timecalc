@@ -7,8 +7,7 @@ import { t } from 'i18n-js';
 import React, { FC } from 'react';
 
 import { useTheme } from '../hooks';
-import HomeScreen from '../screens/Home/Home.screen';
-import SettingsScreen from '../screens/Settings/Settings.screen';
+import { HomeScreen, SettingsScreen } from '../screens';
 
 export enum ERootRouteNames {
 	HOME = 'Home',

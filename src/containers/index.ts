@@ -1,3 +1,1 @@
-import Calculation from './Calculation/Calculation.container';
-
-export { Calculation };
+export { default as Calculation } from './Calculation/Calculation.container';

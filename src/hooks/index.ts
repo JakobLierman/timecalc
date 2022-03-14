@@ -1,6 +1,4 @@
-import useCachedResources from './useCachedResources.hook';
-import useColorScheme from './useColorScheme.hook';
-import useDeviceType from './useDeviceType.hook';
-import useTheme from './useTheme.hook';
-
-export { useCachedResources, useColorScheme, useTheme, useDeviceType };
+export { default as useCachedResources } from './useCachedResources.hook';
+export { default as useColorScheme } from './useColorScheme.hook';
+export { default as useDeviceType } from './useDeviceType.hook';
+export { default as useTheme } from './useTheme.hook';

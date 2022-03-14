@@ -1,5 +1,3 @@
-import ResultTime from './ResultTime/ResultTime.component';
-import SelectionRow from './SelectionRow/SelectionRow.component';
-import TimeInput from './TimeInput/TimeInput.component';
-
-export { SelectionRow, TimeInput, ResultTime };
+export { default as ResultTime } from './ResultTime/ResultTime.component';
+export { default as SelectionRow } from './SelectionRow/SelectionRow.component';
+export { default as TimeInput } from './TimeInput/TimeInput.component';

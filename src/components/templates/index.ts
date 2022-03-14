@@ -1,3 +1,1 @@
-import Section from './Section/Section.component';
-
-export { Section };
+export { default as Section } from './Section/Section.component';
