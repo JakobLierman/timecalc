@@ -13,6 +13,12 @@ enum EEvent {
 }
 
 class AnalyticsService {
+	/**
+	 * Log generic event
+	 *
+	 * @param event
+	 * @param data
+	 */
 	private static logEvent = (event: EEvent, data?: Record<string, unknown>): Promise<void> => {
 		return Analytics.logEvent(event, {
 			...data,
@@ -32,10 +38,25 @@ class AnalyticsService {
 		});
 	};
 
+	/**
+	 * Log event for bringing app to foreground
+	 */
 	public static logAppForeground = (): Promise<void> => this.logEvent(EEvent.APP_FOREGROUND);
 
+	/**
+	 * Log event for bringing app to background
+	 */
 	public static logAppBackground = (): Promise<void> => this.logEvent(EEvent.APP_BACKGROUND);
 
+	/**
+	 * Log event at calculation
+	 *
+	 * @param duration
+	 * @param endTime
+	 * @param accuracy
+	 * @param result
+	 * @param roundedResult
+	 */
 	public static logCalculation = (
 		duration: TTime,
 		endTime: Date,
