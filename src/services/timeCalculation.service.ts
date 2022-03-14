@@ -9,7 +9,7 @@ import {
 
 import { TTime } from '../domain/time.type';
 
-type TDelayOptions = {
+export type TDelayOptions = {
 	addedDays?: number;
 };
 

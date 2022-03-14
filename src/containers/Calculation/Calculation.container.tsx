@@ -1,8 +1,9 @@
 import { add, setSeconds } from 'date-fns';
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 
 import { TComponentProps } from '../../components/types';
 import { TTime } from '../../domain/time.type';
+import AnalyticsService from '../../services/analytics.service';
 import TimeCalculationService from '../../services/timeCalculation.service';
 
 import Styled from './Calculation.styled';
@@ -27,6 +28,11 @@ const Calculation: FC<TComponentProps> = () => {
 	// Result delay time
 	const result = TimeCalculationService.calculateDelayTime(duration, endTime);
 	const roundedResult = TimeCalculationService.roundTime(result, accuracy);
+
+	// Analytics event
+	useEffect(() => {
+		AnalyticsService.logCalculation(duration, endTime, accuracy, result, roundedResult);
+	}, [result]);
 
 	return (
 		<Styled.Container>
