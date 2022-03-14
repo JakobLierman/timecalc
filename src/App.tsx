@@ -5,7 +5,7 @@ import { enableFreeze } from 'react-native-screens';
 import { ThemeProvider } from 'styled-components';
 import styled from 'styled-components/native';
 
-import { useCachedResources, useTheme } from './hooks';
+import { useAppState, useCachedResources, useTheme } from './hooks';
 import RootNavigator from './navigations';
 import ColorUtils from './utils/color.utils';
 
@@ -20,6 +20,9 @@ const Background = styled.View`
 export const App: FC = () => {
 	// React Freeze https://blog.swmansion.com/experimenting-with-react-freeze-71da578e2fa6
 	enableFreeze();
+
+	// App state events
+	useAppState();
 
 	const isLoadingComplete = useCachedResources();
 	const theme = useTheme();

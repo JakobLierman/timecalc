@@ -1,3 +1,4 @@
+export { default as useAppState } from './useAppState.hook';
 export { default as useCachedResources } from './useCachedResources.hook';
 export { default as useColorScheme } from './useColorScheme.hook';
 export { default as useDeviceType } from './useDeviceType.hook';

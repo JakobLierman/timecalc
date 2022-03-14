@@ -1605,14 +1605,14 @@
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.7.5.tgz#77211291c1900a700b8a78cfafda3160d76949ed"
   integrity sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==
 
-"@es-joy/jsdoccomment@~0.20.1":
-  version "0.20.1"
-  resolved "https://registry.yarnpkg.com/@es-joy/jsdoccomment/-/jsdoccomment-0.20.1.tgz#fe89f435f045ae5aaf89c7a4df3616c03e9d106e"
-  integrity sha512-oeJK41dcdqkvdZy/HctKklJNkt/jh+av3PZARrZEl+fs/8HaHeeYoAvEwOV0u5I6bArTF17JEsTZMY359e/nfQ==
+"@es-joy/jsdoccomment@~0.21.2":
+  version "0.21.2"
+  resolved "https://registry.yarnpkg.com/@es-joy/jsdoccomment/-/jsdoccomment-0.21.2.tgz#8d577b8011eddbbc1b65545658055b5b4702c94e"
+  integrity sha512-k8NwNnnYgUR/hyC/JdAbKvaIzTgnT5XJeCeVFo5tpT/4Fu5WiXmhdi6M/c4diqXSDf3ZENyrCtgzCUhIbfT8Zg==
   dependencies:
     comment-parser "1.3.0"
     esquery "^1.4.0"
-    jsdoc-type-pratt-parser "~2.2.3"
+    jsdoc-type-pratt-parser "~2.2.4"
 
 "@eslint/eslintrc@^0.4.3":
   version "0.4.3"
@@ -4481,12 +4481,12 @@ eslint-plugin-jest@22.4.1:
   resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-22.4.1.tgz#a5fd6f7a2a41388d16f527073b778013c5189a9c"
   integrity sha512-gcLfn6P2PrFAVx3AobaOzlIEevpAEf9chTpFZz7bYfc7pz8XRv7vuKTIE4hxPKZSha6XWKKplDQ0x9Pq8xX2mg==
 
-eslint-plugin-jsdoc@^38.0.0:
-  version "38.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-38.0.0.tgz#e58ffd0d9188bd74ba9d3d3f07206ff2e2662bda"
-  integrity sha512-4ZWTq9Jjpr+aezCn/gjRq45C3wFpY16S+umce8q/s2kMmD6oJ/8u8jhPFGoOHUnkZzFNDzYiIUxF9+OmoayLbA==
+eslint-plugin-jsdoc@^38.0.3:
+  version "38.0.3"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-38.0.3.tgz#ad73e73d2c7dc86a2c470b71761362661743ebfb"
+  integrity sha512-CGA2XrDPhDhSnVsSU1fGh/Hf2B/ggF/zLQ8AcaDPORoynkLEXJGVXgkH8yLxtjQajS7ANYJXPKwbnXDpIbDwoQ==
   dependencies:
-    "@es-joy/jsdoccomment" "~0.20.1"
+    "@es-joy/jsdoccomment" "~0.21.2"
     comment-parser "1.3.0"
     debug "^4.3.3"
     escape-string-regexp "^4.0.0"
@@ -4582,10 +4582,10 @@ eslint-plugin-react@^7.20.0:
     semver "^6.3.0"
     string.prototype.matchall "^4.0.6"
 
-eslint-plugin-react@^7.29.3:
-  version "7.29.3"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.29.3.tgz#f4eab757f2756d25d6d4c2a58a9e20b004791f05"
-  integrity sha512-MzW6TuCnDOcta67CkpDyRfRsEVx9FNMDV8wZsDqe1luHPdGTrQIUaUXD27Ja3gHsdOIs/cXzNchWGlqm+qRVRg==
+eslint-plugin-react@^7.29.4:
+  version "7.29.4"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.29.4.tgz#4717de5227f55f3801a5fd51a16a4fa22b5914d2"
+  integrity sha512-CVCXajliVh509PcZYRFyu/BoUEz452+jtQJq2b3Bae4v3xBUWPLCmtmBM+ZinG4MzwmxJgJ2M5rMqhqLVn7MtQ==
   dependencies:
     array-includes "^3.1.4"
     array.prototype.flatmap "^1.2.5"
@@ -6087,10 +6087,10 @@ jscodeshift@^0.11.0:
     temp "^0.8.1"
     write-file-atomic "^2.3.0"
 
-jsdoc-type-pratt-parser@~2.2.3:
-  version "2.2.4"
-  resolved "https://registry.yarnpkg.com/jsdoc-type-pratt-parser/-/jsdoc-type-pratt-parser-2.2.4.tgz#492bfcf1f166e4c8b5c7628b8b8674baee6bfb9c"
-  integrity sha512-GKkP4t6NwFtMpxR/3jNoRzauTdpum5/lkkhBxWSDP3IG/1IFd1NxCTMJ/sgRy8BA1UFsFq6LEwOo0YmiBDA52Q==
+jsdoc-type-pratt-parser@~2.2.4:
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/jsdoc-type-pratt-parser/-/jsdoc-type-pratt-parser-2.2.5.tgz#c9f93afac7ee4b5ed4432fe3f09f7d36b05ed0ff"
+  integrity sha512-2a6eRxSxp1BW040hFvaJxhsCMI9lT8QB8t14t+NY5tC5rckIR0U9cr2tjOeaFirmEOy6MHvmJnY7zTBHq431Lw==
 
 jsesc@^2.5.1:
   version "2.5.2"
@@ -7713,10 +7713,10 @@ react-native-codegen@^0.0.6:
     jscodeshift "^0.11.0"
     nullthrows "^1.1.1"
 
-react-native-safe-area-context@3.3.2:
-  version "3.3.2"
-  resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-3.3.2.tgz#9549a2ce580f2374edb05e49d661258d1b8bcaed"
-  integrity sha512-yOwiiPJ1rk+/nfK13eafbpW6sKW0jOnsRem2C1LPJjM3tfTof6hlvV5eWHATye3XOpu2cJ7N+HdkUvUDGwFD2Q==
+react-native-safe-area-context@4.1.3:
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-4.1.3.tgz#d642960373fcea67729aaf3c5004e502dabb57d1"
+  integrity sha512-vPdpkbSzh8bZDchxD6aE+S9UZGP6z5yn5WDWZ8P/znX5YwQYJthZCf0OxFGUxakUbDh3SFLLD9NzEQu5WjKF7w==
 
 react-native-screens@~3.13.1:
   version "3.13.1"
